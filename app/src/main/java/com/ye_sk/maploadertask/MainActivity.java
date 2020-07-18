@@ -1,15 +1,14 @@
 package com.ye_sk.maploadertask;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
+import android.widget.ListView;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.util.LinkedList;
+import com.ye_sk.maploadertask.regions.RegionAdapter;
+import com.ye_sk.maploadertask.regions.RegionController;
+import com.ye_sk.maploadertask.storageanalyzer.StorageFinder;
+import com.ye_sk.maploadertask.storageanalyzer.StorageList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +16,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RegionController.INSTANCE.setContext(getApplication());
         RegionController.INSTANCE.loadRegions();
+        ListView listView = (ListView) findViewById(R.id.region_list);
+        listView.setAdapter(new RegionAdapter(getBaseContext(),RegionController.INSTANCE.getRegions().getFirst().getSubRegions()));
+        StorageList storageList = (StorageList) findViewById(R.id.storage);
+        storageList.initList(new StorageFinder(getBaseContext()).getStorageList());
     }
 
 

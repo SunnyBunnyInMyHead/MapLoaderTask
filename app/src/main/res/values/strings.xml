@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MapLoaderTask</string>
+    <string name="external_sd_card">Зовнішня SD-картка %s</string>
+    <string name="internal_sd_card">Внутрішня пам\'ять %s</string>
+    <string name="free_size">"Вільно: %1$s / %2$s"</string>
+    <string name="gygabyte">Гб</string>
+    <string name="megabyte">Мб</string>
+    <string name="kilobyte">Кб</string>
+    <string name="unit_byte">б</string>
 </resources>
