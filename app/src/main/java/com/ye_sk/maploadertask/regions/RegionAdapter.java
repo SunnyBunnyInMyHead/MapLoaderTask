@@ -99,6 +99,7 @@ public class RegionAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, SubRegions.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("regions", new Gson().toJson(region.getSubRegions(), new TypeToken<LinkedList<Region>>() {
                     }.getType()));
                     context.startActivity(intent);
