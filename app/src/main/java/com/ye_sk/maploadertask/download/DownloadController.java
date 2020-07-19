@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Environment;
 
 import com.ye_sk.maploadertask.regions.Region;
 
@@ -86,9 +87,11 @@ public enum DownloadController {
     }
 
     public File getWORKING_FOLDER() {
-        if(!WORKING_FOLDER.exists())
-            WORKING_FOLDER.mkdirs();
-        return WORKING_FOLDER;
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+WORK_FOLDER;
+        File file = new File(path);
+        if(!file.exists())
+            file.mkdirs();
+        return file;
     }
 
 }
