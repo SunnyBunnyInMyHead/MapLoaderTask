@@ -2,9 +2,6 @@ package com.ye_sk.maploadertask.storageanalyzer;
 
 import java.io.File;
 
-/**
- * Created by xenonraite on 23.02.16.
- */
 public class Storage {
     private String name;
     private String folderPath;

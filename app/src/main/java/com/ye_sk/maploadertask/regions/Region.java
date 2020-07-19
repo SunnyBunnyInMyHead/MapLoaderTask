@@ -94,6 +94,7 @@ public class Region {
         }
     }
 
+    //todo find out about another language
     private void setEntityAndTitle(String translate) {
         String[] arr = translate.split(";");
         if (arr.length == 0)

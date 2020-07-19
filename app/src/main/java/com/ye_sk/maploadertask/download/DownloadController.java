@@ -48,6 +48,7 @@ public enum DownloadController {
         downloadServiceEnable = false;
     }
 
+    //check service status in a system
     public static boolean isServiceRunning(Class<?> serviceClass, Context activity) {
         ActivityManager manager = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
         if (manager == null) {
@@ -67,6 +68,7 @@ public enum DownloadController {
         initStopDownloadServiceListener();
     }
 
+    //subscribe for stop service event
     private void initStopDownloadServiceListener(){
         stopDownloadServiceListener = new BroadcastReceiver() {
             @Override
